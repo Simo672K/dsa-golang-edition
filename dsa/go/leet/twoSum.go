@@ -6,10 +6,11 @@ func TwoSum(nums []int, target int) []int {
 	prev_diffs := make(map[int]int)
 
 	for i, val := range nums {
-		diff := val - target
-		if v, exists := prev_diffs[diff]; exists {
-			return []int{i, v}
+		diff := target - val
+		if v, exists := prev_diffs[val]; exists {
+			return []int{v, i}
 		}
+		prev_diffs[diff] = i
 	}
 	return []int{}
 }

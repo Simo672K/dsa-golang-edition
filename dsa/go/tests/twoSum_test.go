@@ -16,7 +16,7 @@ func TestTwoSum(t *testing.T) {
 		sum += test1_input[v]
 	}
 
-	if !(target != sum) {
+	if target != sum {
 		t.Error("test failed")
 	}
 }
